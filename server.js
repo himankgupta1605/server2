@@ -7,12 +7,14 @@ const app = express();
 const server = http.createServer(app);
 
 app.use(cors({
-    origin: "https://editorverse.com",
+    origin: [
+        "https://editorverse.com",
+        "https://boisterous-pastelito-698a7b.netlify.app"
+    ],
     credentials: true,
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
-
 
 app.get("/api/turn-credentials", async (req, res) => {
     try {
