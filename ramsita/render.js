@@ -7,7 +7,7 @@ const fs = require('fs');
   const dir = __dirname, FPS = 30, DUR = 8, N = FPS * DUR;
   const only = process.argv[2]; // optional: still frame time -> png
   const browser = await chromium.launch({ args: ['--no-sandbox'] });
-  const page = await browser.newPage({ viewport: { width: 1080, height: 1080 } });
+  const page = await browser.newPage({ viewport: { width: 1200, height: 1500 } });
   page.on('pageerror', e => console.error('PAGE ERROR', e.message));
   await page.goto('file://' + path.join(dir, 'scene.html'));
   if (only) {
